@@ -33,6 +33,10 @@ import {SafeUrlPipe} from './common/safe-url.pipe';
 import {MessagesComponent} from './messages/messages.component';
 import {SearchLessonsComponent} from './search-lessons/search-lessons.component';
 import { LoadingComponent } from './loading/loading.component';
+import { CoursesCardListComponent } from './courses-card-list/courses-card-list.component';
+import { LoadingService } from './services/loading.service';
+import { MessagesService } from './services/messages.service';
+import { CoursesStoreService } from './services/courses.store.ts.service';
 
 @NgModule({
   declarations: [
@@ -46,8 +50,8 @@ import { LoadingComponent } from './loading/loading.component';
     SafeUrlPipe,
     MessagesComponent,
     SearchLessonsComponent,
-    LoadingComponent
-
+    LoadingComponent,
+    CoursesCardListComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,9 @@ import { LoadingComponent } from './loading/loading.component';
     ReactiveFormsModule
   ],
   providers: [
+    LoadingService,
+    MessagesService,
+    CoursesStoreService
   ],
   bootstrap: [AppComponent],
   entryComponents: [CourseDialogComponent]
